@@ -11,6 +11,7 @@ import subprocess
 import sys       
 import os       
 
+# 1.
 def check_python_version():
 
     print("Checking Python version...")
@@ -33,7 +34,7 @@ def check_python_version():
     print("Python version is OK\n")
     return True
 
-
+# 2. 
 def install_dependencies():
     
     # Install required Python packages
@@ -44,6 +45,9 @@ def install_dependencies():
     packages = [
         'opencv-python',    # OpenCV library
         'ultralytics',      # YOLO11 library
+        'onnx',             # ONNX model format (for FPGA pipeline)
+        'onnxruntime',      # ONNX inference engine (for layer-by-layer execution)
+        'pyserial',         # UART serial communication (for FPGA data transfer)
     ]
     
     for package in packages:
@@ -70,7 +74,7 @@ def install_dependencies():
     print("All packages installed!\n")
     return True
 
-
+# 3. 
 def test_camera():
  
     print("Testing camera connection...")
@@ -96,7 +100,7 @@ def test_camera():
         print("Connect USB webcam later for live detection\n")
         return False
 
-
+# 4. 
 def download_sample_image():
  
     print("\nDownloading sample test image...")
