@@ -1,0 +1,3784 @@
+[
+  {
+    "layer_idx": 0,
+    "node_idx": 0,
+    "node_name": "/model.0/conv/Conv",
+    "input_name": "images",
+    "output_name": "/model.0/conv/Conv_output_0",
+    "weight_name": "model.0.conv.weight",
+    "bias_name": "model.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 3,
+    "out_channels": 16,
+    "weight_shape": [
+      16,
+      3,
+      3,
+      3
+    ],
+    "bias_shape": [
+      16
+    ],
+    "param_count": 448,
+    "weight_bytes_int8": 432,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 1,
+    "node_idx": 3,
+    "node_name": "/model.1/conv/Conv",
+    "input_name": "/model.0/act/Mul_output_0",
+    "output_name": "/model.1/conv/Conv_output_0",
+    "weight_name": "model.1.conv.weight",
+    "bias_name": "model.1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 16,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      16,
+      3,
+      3
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 4640,
+    "weight_bytes_int8": 4608,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 2,
+    "node_idx": 6,
+    "node_name": "/model.2/cv1/conv/Conv",
+    "input_name": "/model.1/act/Mul_output_0",
+    "output_name": "/model.2/cv1/conv/Conv_output_0",
+    "weight_name": "model.2.cv1.conv.weight",
+    "bias_name": "model.2.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 32,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      32,
+      1,
+      1
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 1056,
+    "weight_bytes_int8": 1024,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 3,
+    "node_idx": 10,
+    "node_name": "/model.2/m.0/cv1/conv/Conv",
+    "input_name": "/model.2/Split_output_1",
+    "output_name": "/model.2/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.2.m.0.cv1.conv.weight",
+    "bias_name": "model.2.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 16,
+    "out_channels": 8,
+    "weight_shape": [
+      8,
+      16,
+      3,
+      3
+    ],
+    "bias_shape": [
+      8
+    ],
+    "param_count": 1160,
+    "weight_bytes_int8": 1152,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 4,
+    "node_idx": 13,
+    "node_name": "/model.2/m.0/cv2/conv/Conv",
+    "input_name": "/model.2/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.2/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.2.m.0.cv2.conv.weight",
+    "bias_name": "model.2.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 8,
+    "out_channels": 16,
+    "weight_shape": [
+      16,
+      8,
+      3,
+      3
+    ],
+    "bias_shape": [
+      16
+    ],
+    "param_count": 1168,
+    "weight_bytes_int8": 1152,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 5,
+    "node_idx": 18,
+    "node_name": "/model.2/cv2/conv/Conv",
+    "input_name": "/model.2/Concat_output_0",
+    "output_name": "/model.2/cv2/conv/Conv_output_0",
+    "weight_name": "model.2.cv2.conv.weight",
+    "bias_name": "model.2.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 48,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      48,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 3136,
+    "weight_bytes_int8": 3072,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 6,
+    "node_idx": 21,
+    "node_name": "/model.3/conv/Conv",
+    "input_name": "/model.2/cv2/act/Mul_output_0",
+    "output_name": "/model.3/conv/Conv_output_0",
+    "weight_name": "model.3.conv.weight",
+    "bias_name": "model.3.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 7,
+    "node_idx": 24,
+    "node_name": "/model.4/cv1/conv/Conv",
+    "input_name": "/model.3/act/Mul_output_0",
+    "output_name": "/model.4/cv1/conv/Conv_output_0",
+    "weight_name": "model.4.cv1.conv.weight",
+    "bias_name": "model.4.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 4160,
+    "weight_bytes_int8": 4096,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 8,
+    "node_idx": 28,
+    "node_name": "/model.4/m.0/cv1/conv/Conv",
+    "input_name": "/model.4/Split_output_1",
+    "output_name": "/model.4/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.4.m.0.cv1.conv.weight",
+    "bias_name": "model.4.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 32,
+    "out_channels": 16,
+    "weight_shape": [
+      16,
+      32,
+      3,
+      3
+    ],
+    "bias_shape": [
+      16
+    ],
+    "param_count": 4624,
+    "weight_bytes_int8": 4608,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 9,
+    "node_idx": 31,
+    "node_name": "/model.4/m.0/cv2/conv/Conv",
+    "input_name": "/model.4/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.4/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.4.m.0.cv2.conv.weight",
+    "bias_name": "model.4.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 16,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      16,
+      3,
+      3
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 4640,
+    "weight_bytes_int8": 4608,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 10,
+    "node_idx": 36,
+    "node_name": "/model.4/cv2/conv/Conv",
+    "input_name": "/model.4/Concat_output_0",
+    "output_name": "/model.4/cv2/conv/Conv_output_0",
+    "weight_name": "model.4.cv2.conv.weight",
+    "bias_name": "model.4.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 96,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      96,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 12416,
+    "weight_bytes_int8": 12288,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 11,
+    "node_idx": 39,
+    "node_name": "/model.5/conv/Conv",
+    "input_name": "/model.4/cv2/act/Mul_output_0",
+    "output_name": "/model.5/conv/Conv_output_0",
+    "weight_name": "model.5.conv.weight",
+    "bias_name": "model.5.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      128,
+      3,
+      3
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 147584,
+    "weight_bytes_int8": 147456,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 12,
+    "node_idx": 42,
+    "node_name": "/model.6/cv1/conv/Conv",
+    "input_name": "/model.5/act/Mul_output_0",
+    "output_name": "/model.6/cv1/conv/Conv_output_0",
+    "weight_name": "model.6.cv1.conv.weight",
+    "bias_name": "model.6.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 16512,
+    "weight_bytes_int8": 16384,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 13,
+    "node_idx": 46,
+    "node_name": "/model.6/m.0/cv1/conv/Conv",
+    "input_name": "/model.6/Split_output_1",
+    "output_name": "/model.6/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.6.m.0.cv1.conv.weight",
+    "bias_name": "model.6.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      64,
+      1,
+      1
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 2080,
+    "weight_bytes_int8": 2048,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 14,
+    "node_idx": 47,
+    "node_name": "/model.6/m.0/cv2/conv/Conv",
+    "input_name": "/model.6/Split_output_1",
+    "output_name": "/model.6/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.6.m.0.cv2.conv.weight",
+    "bias_name": "model.6.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      64,
+      1,
+      1
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 2080,
+    "weight_bytes_int8": 2048,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 15,
+    "node_idx": 52,
+    "node_name": "/model.6/m.0/m/m.0/cv1/conv/Conv",
+    "input_name": "/model.6/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.6/m.0/m/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.6.m.0.m.0.cv1.conv.weight",
+    "bias_name": "model.6.m.0.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 32,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      32,
+      3,
+      3
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 9248,
+    "weight_bytes_int8": 9216,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 16,
+    "node_idx": 55,
+    "node_name": "/model.6/m.0/m/m.0/cv2/conv/Conv",
+    "input_name": "/model.6/m.0/m/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.6/m.0/m/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.6.m.0.m.0.cv2.conv.weight",
+    "bias_name": "model.6.m.0.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 32,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      32,
+      3,
+      3
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 9248,
+    "weight_bytes_int8": 9216,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 17,
+    "node_idx": 59,
+    "node_name": "/model.6/m.0/m/m.1/cv1/conv/Conv",
+    "input_name": "/model.6/m.0/m/m.0/Add_output_0",
+    "output_name": "/model.6/m.0/m/m.1/cv1/conv/Conv_output_0",
+    "weight_name": "model.6.m.0.m.1.cv1.conv.weight",
+    "bias_name": "model.6.m.0.m.1.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 32,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      32,
+      3,
+      3
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 9248,
+    "weight_bytes_int8": 9216,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 18,
+    "node_idx": 62,
+    "node_name": "/model.6/m.0/m/m.1/cv2/conv/Conv",
+    "input_name": "/model.6/m.0/m/m.1/cv1/act/Mul_output_0",
+    "output_name": "/model.6/m.0/m/m.1/cv2/conv/Conv_output_0",
+    "weight_name": "model.6.m.0.m.1.cv2.conv.weight",
+    "bias_name": "model.6.m.0.m.1.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 32,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      32,
+      3,
+      3
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 9248,
+    "weight_bytes_int8": 9216,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 19,
+    "node_idx": 67,
+    "node_name": "/model.6/m.0/cv3/conv/Conv",
+    "input_name": "/model.6/m.0/Concat_output_0",
+    "output_name": "/model.6/m.0/cv3/conv/Conv_output_0",
+    "weight_name": "model.6.m.0.cv3.conv.weight",
+    "bias_name": "model.6.m.0.cv3.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 4160,
+    "weight_bytes_int8": 4096,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 20,
+    "node_idx": 71,
+    "node_name": "/model.6/cv2/conv/Conv",
+    "input_name": "/model.6/Concat_output_0",
+    "output_name": "/model.6/cv2/conv/Conv_output_0",
+    "weight_name": "model.6.cv2.conv.weight",
+    "bias_name": "model.6.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 192,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      192,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 24704,
+    "weight_bytes_int8": 24576,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 21,
+    "node_idx": 74,
+    "node_name": "/model.7/conv/Conv",
+    "input_name": "/model.6/cv2/act/Mul_output_0",
+    "output_name": "/model.7/conv/Conv_output_0",
+    "weight_name": "model.7.conv.weight",
+    "bias_name": "model.7.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      128,
+      3,
+      3
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 295168,
+    "weight_bytes_int8": 294912,
+    "is_depthwise": false,
+    "fits_bram": false
+  },
+  {
+    "layer_idx": 22,
+    "node_idx": 77,
+    "node_name": "/model.8/cv1/conv/Conv",
+    "input_name": "/model.7/act/Mul_output_0",
+    "output_name": "/model.8/cv1/conv/Conv_output_0",
+    "weight_name": "model.8.cv1.conv.weight",
+    "bias_name": "model.8.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 256,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      256,
+      1,
+      1
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 65792,
+    "weight_bytes_int8": 65536,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 23,
+    "node_idx": 81,
+    "node_name": "/model.8/m.0/cv1/conv/Conv",
+    "input_name": "/model.8/Split_output_1",
+    "output_name": "/model.8/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.8.m.0.cv1.conv.weight",
+    "bias_name": "model.8.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 8256,
+    "weight_bytes_int8": 8192,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 24,
+    "node_idx": 82,
+    "node_name": "/model.8/m.0/cv2/conv/Conv",
+    "input_name": "/model.8/Split_output_1",
+    "output_name": "/model.8/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.8.m.0.cv2.conv.weight",
+    "bias_name": "model.8.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 8256,
+    "weight_bytes_int8": 8192,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 25,
+    "node_idx": 87,
+    "node_name": "/model.8/m.0/m/m.0/cv1/conv/Conv",
+    "input_name": "/model.8/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.8/m.0/m/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.8.m.0.m.0.cv1.conv.weight",
+    "bias_name": "model.8.m.0.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 26,
+    "node_idx": 90,
+    "node_name": "/model.8/m.0/m/m.0/cv2/conv/Conv",
+    "input_name": "/model.8/m.0/m/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.8/m.0/m/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.8.m.0.m.0.cv2.conv.weight",
+    "bias_name": "model.8.m.0.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 27,
+    "node_idx": 94,
+    "node_name": "/model.8/m.0/m/m.1/cv1/conv/Conv",
+    "input_name": "/model.8/m.0/m/m.0/Add_output_0",
+    "output_name": "/model.8/m.0/m/m.1/cv1/conv/Conv_output_0",
+    "weight_name": "model.8.m.0.m.1.cv1.conv.weight",
+    "bias_name": "model.8.m.0.m.1.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 28,
+    "node_idx": 97,
+    "node_name": "/model.8/m.0/m/m.1/cv2/conv/Conv",
+    "input_name": "/model.8/m.0/m/m.1/cv1/act/Mul_output_0",
+    "output_name": "/model.8/m.0/m/m.1/cv2/conv/Conv_output_0",
+    "weight_name": "model.8.m.0.m.1.cv2.conv.weight",
+    "bias_name": "model.8.m.0.m.1.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 29,
+    "node_idx": 102,
+    "node_name": "/model.8/m.0/cv3/conv/Conv",
+    "input_name": "/model.8/m.0/Concat_output_0",
+    "output_name": "/model.8/m.0/cv3/conv/Conv_output_0",
+    "weight_name": "model.8.m.0.cv3.conv.weight",
+    "bias_name": "model.8.m.0.cv3.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 16512,
+    "weight_bytes_int8": 16384,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 30,
+    "node_idx": 106,
+    "node_name": "/model.8/cv2/conv/Conv",
+    "input_name": "/model.8/Concat_output_0",
+    "output_name": "/model.8/cv2/conv/Conv_output_0",
+    "weight_name": "model.8.cv2.conv.weight",
+    "bias_name": "model.8.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 384,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      384,
+      1,
+      1
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 98560,
+    "weight_bytes_int8": 98304,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 31,
+    "node_idx": 109,
+    "node_name": "/model.9/cv1/conv/Conv",
+    "input_name": "/model.8/cv2/act/Mul_output_0",
+    "output_name": "/model.9/cv1/conv/Conv_output_0",
+    "weight_name": "model.9.cv1.conv.weight",
+    "bias_name": "model.9.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 256,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      256,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 32896,
+    "weight_bytes_int8": 32768,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 32,
+    "node_idx": 116,
+    "node_name": "/model.9/cv2/conv/Conv",
+    "input_name": "/model.9/Concat_output_0",
+    "output_name": "/model.9/cv2/conv/Conv_output_0",
+    "weight_name": "model.9.cv2.conv.weight",
+    "bias_name": "model.9.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 512,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      512,
+      1,
+      1
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 131328,
+    "weight_bytes_int8": 131072,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 33,
+    "node_idx": 119,
+    "node_name": "/model.10/cv1/conv/Conv",
+    "input_name": "/model.9/cv2/act/Mul_output_0",
+    "output_name": "/model.10/cv1/conv/Conv_output_0",
+    "weight_name": "model.10.cv1.conv.weight",
+    "bias_name": "model.10.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 256,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      256,
+      1,
+      1
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 65792,
+    "weight_bytes_int8": 65536,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 34,
+    "node_idx": 123,
+    "node_name": "/model.10/m/m.0/attn/qkv/conv/Conv",
+    "input_name": "/model.10/Split_output_1",
+    "output_name": "/model.10/m/m.0/attn/qkv/conv/Conv_output_0",
+    "weight_name": "model.10.m.0.attn.qkv.conv.weight",
+    "bias_name": "model.10.m.0.attn.qkv.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 33024,
+    "weight_bytes_int8": 32768,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 35,
+    "node_idx": 129,
+    "node_name": "/model.10/m/m.0/attn/pe/conv/Conv",
+    "input_name": "/model.10/m/m.0/attn/Reshape_2_output_0",
+    "output_name": "/model.10/m/m.0/attn/pe/conv/Conv_output_0",
+    "weight_name": "model.10.m.0.attn.pe.conv.weight",
+    "bias_name": "model.10.m.0.attn.pe.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 128,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      1,
+      3,
+      3
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 1280,
+    "weight_bytes_int8": 1152,
+    "is_depthwise": true,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 36,
+    "node_idx": 136,
+    "node_name": "/model.10/m/m.0/attn/proj/conv/Conv",
+    "input_name": "/model.10/m/m.0/attn/Add_output_0",
+    "output_name": "/model.10/m/m.0/attn/proj/conv/Conv_output_0",
+    "weight_name": "model.10.m.0.attn.proj.conv.weight",
+    "bias_name": "model.10.m.0.attn.proj.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 16512,
+    "weight_bytes_int8": 16384,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 37,
+    "node_idx": 138,
+    "node_name": "/model.10/m/m.0/ffn/ffn.0/conv/Conv",
+    "input_name": "/model.10/m/m.0/Add_output_0",
+    "output_name": "/model.10/m/m.0/ffn/ffn.0/conv/Conv_output_0",
+    "weight_name": "model.10.m.0.ffn.0.conv.weight",
+    "bias_name": "model.10.m.0.ffn.0.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 33024,
+    "weight_bytes_int8": 32768,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 38,
+    "node_idx": 141,
+    "node_name": "/model.10/m/m.0/ffn/ffn.1/conv/Conv",
+    "input_name": "/model.10/m/m.0/ffn/ffn.0/act/Mul_output_0",
+    "output_name": "/model.10/m/m.0/ffn/ffn.1/conv/Conv_output_0",
+    "weight_name": "model.10.m.0.ffn.1.conv.weight",
+    "bias_name": "model.10.m.0.ffn.1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 256,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      256,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 32896,
+    "weight_bytes_int8": 32768,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 39,
+    "node_idx": 144,
+    "node_name": "/model.10/cv2/conv/Conv",
+    "input_name": "/model.10/Concat_output_0",
+    "output_name": "/model.10/cv2/conv/Conv_output_0",
+    "weight_name": "model.10.cv2.conv.weight",
+    "bias_name": "model.10.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 256,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      256,
+      1,
+      1
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 65792,
+    "weight_bytes_int8": 65536,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 40,
+    "node_idx": 149,
+    "node_name": "/model.13/cv1/conv/Conv",
+    "input_name": "/model.12/Concat_output_0",
+    "output_name": "/model.13/cv1/conv/Conv_output_0",
+    "weight_name": "model.13.cv1.conv.weight",
+    "bias_name": "model.13.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 384,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      384,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 49280,
+    "weight_bytes_int8": 49152,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 41,
+    "node_idx": 153,
+    "node_name": "/model.13/m.0/cv1/conv/Conv",
+    "input_name": "/model.13/Split_output_1",
+    "output_name": "/model.13/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.13.m.0.cv1.conv.weight",
+    "bias_name": "model.13.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 18464,
+    "weight_bytes_int8": 18432,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 42,
+    "node_idx": 156,
+    "node_name": "/model.13/m.0/cv2/conv/Conv",
+    "input_name": "/model.13/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.13/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.13.m.0.cv2.conv.weight",
+    "bias_name": "model.13.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 32,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      32,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 18496,
+    "weight_bytes_int8": 18432,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 43,
+    "node_idx": 161,
+    "node_name": "/model.13/cv2/conv/Conv",
+    "input_name": "/model.13/Concat_output_0",
+    "output_name": "/model.13/cv2/conv/Conv_output_0",
+    "weight_name": "model.13.cv2.conv.weight",
+    "bias_name": "model.13.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 192,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      192,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 24704,
+    "weight_bytes_int8": 24576,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 44,
+    "node_idx": 166,
+    "node_name": "/model.16/cv1/conv/Conv",
+    "input_name": "/model.15/Concat_output_0",
+    "output_name": "/model.16/cv1/conv/Conv_output_0",
+    "weight_name": "model.16.cv1.conv.weight",
+    "bias_name": "model.16.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 256,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      256,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 16448,
+    "weight_bytes_int8": 16384,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 45,
+    "node_idx": 170,
+    "node_name": "/model.16/m.0/cv1/conv/Conv",
+    "input_name": "/model.16/Split_output_1",
+    "output_name": "/model.16/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.16.m.0.cv1.conv.weight",
+    "bias_name": "model.16.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 32,
+    "out_channels": 16,
+    "weight_shape": [
+      16,
+      32,
+      3,
+      3
+    ],
+    "bias_shape": [
+      16
+    ],
+    "param_count": 4624,
+    "weight_bytes_int8": 4608,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 46,
+    "node_idx": 173,
+    "node_name": "/model.16/m.0/cv2/conv/Conv",
+    "input_name": "/model.16/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.16/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.16.m.0.cv2.conv.weight",
+    "bias_name": "model.16.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 16,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      16,
+      3,
+      3
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 4640,
+    "weight_bytes_int8": 4608,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 47,
+    "node_idx": 178,
+    "node_name": "/model.16/cv2/conv/Conv",
+    "input_name": "/model.16/Concat_output_0",
+    "output_name": "/model.16/cv2/conv/Conv_output_0",
+    "weight_name": "model.16.cv2.conv.weight",
+    "bias_name": "model.16.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 96,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      96,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 6208,
+    "weight_bytes_int8": 6144,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 48,
+    "node_idx": 181,
+    "node_name": "/model.17/conv/Conv",
+    "input_name": "/model.16/cv2/act/Mul_output_0",
+    "output_name": "/model.17/conv/Conv_output_0",
+    "weight_name": "model.17.conv.weight",
+    "bias_name": "model.17.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 49,
+    "node_idx": 182,
+    "node_name": "/model.23/cv2.0/cv2.0.0/conv/Conv",
+    "input_name": "/model.16/cv2/act/Mul_output_0",
+    "output_name": "/model.23/cv2.0/cv2.0.0/conv/Conv_output_0",
+    "weight_name": "model.23.cv2.0.0.conv.weight",
+    "bias_name": "model.23.cv2.0.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 50,
+    "node_idx": 183,
+    "node_name": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv",
+    "input_name": "/model.16/cv2/act/Mul_output_0",
+    "output_name": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.0.0.0.conv.weight",
+    "bias_name": "model.23.cv3.0.0.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 64,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      1,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 640,
+    "weight_bytes_int8": 576,
+    "is_depthwise": true,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 51,
+    "node_idx": 191,
+    "node_name": "/model.23/cv2.0/cv2.0.1/conv/Conv",
+    "input_name": "/model.23/cv2.0/cv2.0.0/act/Mul_output_0",
+    "output_name": "/model.23/cv2.0/cv2.0.1/conv/Conv_output_0",
+    "weight_name": "model.23.cv2.0.1.conv.weight",
+    "bias_name": "model.23.cv2.0.1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 52,
+    "node_idx": 192,
+    "node_name": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv",
+    "input_name": "/model.23/cv3.0/cv3.0.0/cv3.0.0.0/act/Mul_output_0",
+    "output_name": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.0.0.1.conv.weight",
+    "bias_name": "model.23.cv3.0.0.1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      64,
+      1,
+      1
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 5200,
+    "weight_bytes_int8": 5120,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 53,
+    "node_idx": 193,
+    "node_name": "/model.19/cv1/conv/Conv",
+    "input_name": "/model.18/Concat_output_0",
+    "output_name": "/model.19/cv1/conv/Conv_output_0",
+    "weight_name": "model.19.cv1.conv.weight",
+    "bias_name": "model.19.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 192,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      192,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 24704,
+    "weight_bytes_int8": 24576,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 54,
+    "node_idx": 200,
+    "node_name": "/model.23/cv2.0/cv2.0.2/Conv",
+    "input_name": "/model.23/cv2.0/cv2.0.1/act/Mul_output_0",
+    "output_name": "/model.23/cv2.0/cv2.0.2/Conv_output_0",
+    "weight_name": "model.23.cv2.0.2.weight",
+    "bias_name": "model.23.cv2.0.2.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 4160,
+    "weight_bytes_int8": 4096,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 55,
+    "node_idx": 201,
+    "node_name": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv",
+    "input_name": "/model.23/cv3.0/cv3.0.0/cv3.0.0.1/act/Mul_output_0",
+    "output_name": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.0.1.0.conv.weight",
+    "bias_name": "model.23.cv3.0.1.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 80,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 80,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      1,
+      3,
+      3
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 800,
+    "weight_bytes_int8": 720,
+    "is_depthwise": true,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 56,
+    "node_idx": 205,
+    "node_name": "/model.19/m.0/cv1/conv/Conv",
+    "input_name": "/model.19/Split_output_1",
+    "output_name": "/model.19/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.19.m.0.cv1.conv.weight",
+    "bias_name": "model.19.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 32,
+    "weight_shape": [
+      32,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      32
+    ],
+    "param_count": 18464,
+    "weight_bytes_int8": 18432,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 57,
+    "node_idx": 208,
+    "node_name": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv",
+    "input_name": "/model.23/cv3.0/cv3.0.1/cv3.0.1.0/act/Mul_output_0",
+    "output_name": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.0.1.1.conv.weight",
+    "bias_name": "model.23.cv3.0.1.1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 80,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      80,
+      1,
+      1
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 6480,
+    "weight_bytes_int8": 6400,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 58,
+    "node_idx": 211,
+    "node_name": "/model.19/m.0/cv2/conv/Conv",
+    "input_name": "/model.19/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.19/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.19.m.0.cv2.conv.weight",
+    "bias_name": "model.19.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 32,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      32,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 18496,
+    "weight_bytes_int8": 18432,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 59,
+    "node_idx": 214,
+    "node_name": "/model.23/cv3.0/cv3.0.2/Conv",
+    "input_name": "/model.23/cv3.0/cv3.0.1/cv3.0.1.1/act/Mul_output_0",
+    "output_name": "/model.23/cv3.0/cv3.0.2/Conv_output_0",
+    "weight_name": "model.23.cv3.0.2.weight",
+    "bias_name": "model.23.cv3.0.2.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 80,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      80,
+      1,
+      1
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 6480,
+    "weight_bytes_int8": 6400,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 60,
+    "node_idx": 219,
+    "node_name": "/model.19/cv2/conv/Conv",
+    "input_name": "/model.19/Concat_output_0",
+    "output_name": "/model.19/cv2/conv/Conv_output_0",
+    "weight_name": "model.19.cv2.conv.weight",
+    "bias_name": "model.19.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 192,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      192,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 24704,
+    "weight_bytes_int8": 24576,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 61,
+    "node_idx": 222,
+    "node_name": "/model.20/conv/Conv",
+    "input_name": "/model.19/cv2/act/Mul_output_0",
+    "output_name": "/model.20/conv/Conv_output_0",
+    "weight_name": "model.20.conv.weight",
+    "bias_name": "model.20.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      2,
+      2
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      128,
+      3,
+      3
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 147584,
+    "weight_bytes_int8": 147456,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 62,
+    "node_idx": 223,
+    "node_name": "/model.23/cv2.1/cv2.1.0/conv/Conv",
+    "input_name": "/model.19/cv2/act/Mul_output_0",
+    "output_name": "/model.23/cv2.1/cv2.1.0/conv/Conv_output_0",
+    "weight_name": "model.23.cv2.1.0.conv.weight",
+    "bias_name": "model.23.cv2.1.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      128,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 73792,
+    "weight_bytes_int8": 73728,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 63,
+    "node_idx": 224,
+    "node_name": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv",
+    "input_name": "/model.19/cv2/act/Mul_output_0",
+    "output_name": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.1.0.0.conv.weight",
+    "bias_name": "model.23.cv3.1.0.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 128,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      1,
+      3,
+      3
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 1280,
+    "weight_bytes_int8": 1152,
+    "is_depthwise": true,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 64,
+    "node_idx": 232,
+    "node_name": "/model.23/cv2.1/cv2.1.1/conv/Conv",
+    "input_name": "/model.23/cv2.1/cv2.1.0/act/Mul_output_0",
+    "output_name": "/model.23/cv2.1/cv2.1.1/conv/Conv_output_0",
+    "weight_name": "model.23.cv2.1.1.conv.weight",
+    "bias_name": "model.23.cv2.1.1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 65,
+    "node_idx": 233,
+    "node_name": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv",
+    "input_name": "/model.23/cv3.1/cv3.1.0/cv3.1.0.0/act/Mul_output_0",
+    "output_name": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.1.0.1.conv.weight",
+    "bias_name": "model.23.cv3.1.0.1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 10320,
+    "weight_bytes_int8": 10240,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 66,
+    "node_idx": 234,
+    "node_name": "/model.22/cv1/conv/Conv",
+    "input_name": "/model.21/Concat_output_0",
+    "output_name": "/model.22/cv1/conv/Conv_output_0",
+    "weight_name": "model.22.cv1.conv.weight",
+    "bias_name": "model.22.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 384,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      384,
+      1,
+      1
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 98560,
+    "weight_bytes_int8": 98304,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 67,
+    "node_idx": 241,
+    "node_name": "/model.23/cv2.1/cv2.1.2/Conv",
+    "input_name": "/model.23/cv2.1/cv2.1.1/act/Mul_output_0",
+    "output_name": "/model.23/cv2.1/cv2.1.2/Conv_output_0",
+    "weight_name": "model.23.cv2.1.2.weight",
+    "bias_name": "model.23.cv2.1.2.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 4160,
+    "weight_bytes_int8": 4096,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 68,
+    "node_idx": 242,
+    "node_name": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv",
+    "input_name": "/model.23/cv3.1/cv3.1.0/cv3.1.0.1/act/Mul_output_0",
+    "output_name": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.1.1.0.conv.weight",
+    "bias_name": "model.23.cv3.1.1.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 80,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 80,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      1,
+      3,
+      3
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 800,
+    "weight_bytes_int8": 720,
+    "is_depthwise": true,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 69,
+    "node_idx": 246,
+    "node_name": "/model.22/m.0/cv1/conv/Conv",
+    "input_name": "/model.22/Split_output_1",
+    "output_name": "/model.22/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.22.m.0.cv1.conv.weight",
+    "bias_name": "model.22.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 8256,
+    "weight_bytes_int8": 8192,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 70,
+    "node_idx": 247,
+    "node_name": "/model.22/m.0/cv2/conv/Conv",
+    "input_name": "/model.22/Split_output_1",
+    "output_name": "/model.22/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.22.m.0.cv2.conv.weight",
+    "bias_name": "model.22.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 8256,
+    "weight_bytes_int8": 8192,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 71,
+    "node_idx": 251,
+    "node_name": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv",
+    "input_name": "/model.23/cv3.1/cv3.1.1/cv3.1.1.0/act/Mul_output_0",
+    "output_name": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.1.1.1.conv.weight",
+    "bias_name": "model.23.cv3.1.1.1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 80,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      80,
+      1,
+      1
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 6480,
+    "weight_bytes_int8": 6400,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 72,
+    "node_idx": 255,
+    "node_name": "/model.22/m.0/m/m.0/cv1/conv/Conv",
+    "input_name": "/model.22/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.22/m.0/m/m.0/cv1/conv/Conv_output_0",
+    "weight_name": "model.22.m.0.m.0.cv1.conv.weight",
+    "bias_name": "model.22.m.0.m.0.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 73,
+    "node_idx": 258,
+    "node_name": "/model.23/cv3.1/cv3.1.2/Conv",
+    "input_name": "/model.23/cv3.1/cv3.1.1/cv3.1.1.1/act/Mul_output_0",
+    "output_name": "/model.23/cv3.1/cv3.1.2/Conv_output_0",
+    "weight_name": "model.23.cv3.1.2.weight",
+    "bias_name": "model.23.cv3.1.2.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 80,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      80,
+      1,
+      1
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 6480,
+    "weight_bytes_int8": 6400,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 74,
+    "node_idx": 261,
+    "node_name": "/model.22/m.0/m/m.0/cv2/conv/Conv",
+    "input_name": "/model.22/m.0/m/m.0/cv1/act/Mul_output_0",
+    "output_name": "/model.22/m.0/m/m.0/cv2/conv/Conv_output_0",
+    "weight_name": "model.22.m.0.m.0.cv2.conv.weight",
+    "bias_name": "model.22.m.0.m.0.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 75,
+    "node_idx": 265,
+    "node_name": "/model.22/m.0/m/m.1/cv1/conv/Conv",
+    "input_name": "/model.22/m.0/m/m.0/Add_output_0",
+    "output_name": "/model.22/m.0/m/m.1/cv1/conv/Conv_output_0",
+    "weight_name": "model.22.m.0.m.1.cv1.conv.weight",
+    "bias_name": "model.22.m.0.m.1.cv1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 76,
+    "node_idx": 268,
+    "node_name": "/model.22/m.0/m/m.1/cv2/conv/Conv",
+    "input_name": "/model.22/m.0/m/m.1/cv1/act/Mul_output_0",
+    "output_name": "/model.22/m.0/m/m.1/cv2/conv/Conv_output_0",
+    "weight_name": "model.22.m.0.m.1.cv2.conv.weight",
+    "bias_name": "model.22.m.0.m.1.cv2.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 77,
+    "node_idx": 273,
+    "node_name": "/model.22/m.0/cv3/conv/Conv",
+    "input_name": "/model.22/m.0/Concat_output_0",
+    "output_name": "/model.22/m.0/cv3/conv/Conv_output_0",
+    "weight_name": "model.22.m.0.cv3.conv.weight",
+    "bias_name": "model.22.m.0.cv3.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 128,
+    "out_channels": 128,
+    "weight_shape": [
+      128,
+      128,
+      1,
+      1
+    ],
+    "bias_shape": [
+      128
+    ],
+    "param_count": 16512,
+    "weight_bytes_int8": 16384,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 78,
+    "node_idx": 277,
+    "node_name": "/model.22/cv2/conv/Conv",
+    "input_name": "/model.22/Concat_output_0",
+    "output_name": "/model.22/cv2/conv/Conv_output_0",
+    "weight_name": "model.22.cv2.conv.weight",
+    "bias_name": "model.22.cv2.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 384,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      384,
+      1,
+      1
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 98560,
+    "weight_bytes_int8": 98304,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 79,
+    "node_idx": 280,
+    "node_name": "/model.23/cv2.2/cv2.2.0/conv/Conv",
+    "input_name": "/model.22/cv2/act/Mul_output_0",
+    "output_name": "/model.23/cv2.2/cv2.2.0/conv/Conv_output_0",
+    "weight_name": "model.23.cv2.2.0.conv.weight",
+    "bias_name": "model.23.cv2.2.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 256,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      256,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 147520,
+    "weight_bytes_int8": 147456,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 80,
+    "node_idx": 281,
+    "node_name": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv",
+    "input_name": "/model.22/cv2/act/Mul_output_0",
+    "output_name": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.2.0.0.conv.weight",
+    "bias_name": "model.23.cv3.2.0.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 256,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 256,
+    "out_channels": 256,
+    "weight_shape": [
+      256,
+      1,
+      3,
+      3
+    ],
+    "bias_shape": [
+      256
+    ],
+    "param_count": 2560,
+    "weight_bytes_int8": 2304,
+    "is_depthwise": true,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 81,
+    "node_idx": 286,
+    "node_name": "/model.23/cv2.2/cv2.2.1/conv/Conv",
+    "input_name": "/model.23/cv2.2/cv2.2.0/act/Mul_output_0",
+    "output_name": "/model.23/cv2.2/cv2.2.1/conv/Conv_output_0",
+    "weight_name": "model.23.cv2.2.1.conv.weight",
+    "bias_name": "model.23.cv2.2.1.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      3,
+      3
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 36928,
+    "weight_bytes_int8": 36864,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 82,
+    "node_idx": 287,
+    "node_name": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv",
+    "input_name": "/model.23/cv3.2/cv3.2.0/cv3.2.0.0/act/Mul_output_0",
+    "output_name": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.2.0.1.conv.weight",
+    "bias_name": "model.23.cv3.2.0.1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 256,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      256,
+      1,
+      1
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 20560,
+    "weight_bytes_int8": 20480,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 83,
+    "node_idx": 292,
+    "node_name": "/model.23/cv2.2/cv2.2.2/Conv",
+    "input_name": "/model.23/cv2.2/cv2.2.1/act/Mul_output_0",
+    "output_name": "/model.23/cv2.2/cv2.2.2/Conv_output_0",
+    "weight_name": "model.23.cv2.2.2.weight",
+    "bias_name": "model.23.cv2.2.2.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 64,
+    "out_channels": 64,
+    "weight_shape": [
+      64,
+      64,
+      1,
+      1
+    ],
+    "bias_shape": [
+      64
+    ],
+    "param_count": 4160,
+    "weight_bytes_int8": 4096,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 84,
+    "node_idx": 293,
+    "node_name": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv",
+    "input_name": "/model.23/cv3.2/cv3.2.0/cv3.2.0.1/act/Mul_output_0",
+    "output_name": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.2.1.0.conv.weight",
+    "bias_name": "model.23.cv3.2.1.0.conv.bias",
+    "kernel_shape": [
+      3,
+      3
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      1,
+      1,
+      1,
+      1
+    ],
+    "group": 80,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 80,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      1,
+      3,
+      3
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 800,
+    "weight_bytes_int8": 720,
+    "is_depthwise": true,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 85,
+    "node_idx": 298,
+    "node_name": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv",
+    "input_name": "/model.23/cv3.2/cv3.2.1/cv3.2.1.0/act/Mul_output_0",
+    "output_name": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/conv/Conv_output_0",
+    "weight_name": "model.23.cv3.2.1.1.conv.weight",
+    "bias_name": "model.23.cv3.2.1.1.conv.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 80,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      80,
+      1,
+      1
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 6480,
+    "weight_bytes_int8": 6400,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 86,
+    "node_idx": 304,
+    "node_name": "/model.23/cv3.2/cv3.2.2/Conv",
+    "input_name": "/model.23/cv3.2/cv3.2.1/cv3.2.1.1/act/Mul_output_0",
+    "output_name": "/model.23/cv3.2/cv3.2.2/Conv_output_0",
+    "weight_name": "model.23.cv3.2.2.weight",
+    "bias_name": "model.23.cv3.2.2.bias",
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 80,
+    "out_channels": 80,
+    "weight_shape": [
+      80,
+      80,
+      1,
+      1
+    ],
+    "bias_shape": [
+      80
+    ],
+    "param_count": 6480,
+    "weight_bytes_int8": 6400,
+    "is_depthwise": false,
+    "fits_bram": true
+  },
+  {
+    "layer_idx": 87,
+    "node_idx": 305,
+    "node_name": "/model.23/dfl/conv/Conv",
+    "input_name": "/model.23/dfl/Softmax_output_0",
+    "output_name": "/model.23/dfl/conv/Conv_output_0",
+    "weight_name": "model.23.dfl.conv.weight",
+    "bias_name": null,
+    "kernel_shape": [
+      1,
+      1
+    ],
+    "strides": [
+      1,
+      1
+    ],
+    "pads": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "group": 1,
+    "dilations": [
+      1,
+      1
+    ],
+    "in_channels": 16,
+    "out_channels": 1,
+    "weight_shape": [
+      1,
+      16,
+      1,
+      1
+    ],
+    "bias_shape": null,
+    "param_count": 16,
+    "weight_bytes_int8": 16,
+    "is_depthwise": false,
+    "fits_bram": true
+  }
+]
