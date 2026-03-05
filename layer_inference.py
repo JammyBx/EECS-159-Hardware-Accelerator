@@ -103,15 +103,23 @@ def build_debug_model():
             # Graph input tensor — create a ValueInfoProto from the input
             inp = graph_input_map[name]
             tensor_type = inp.type.tensor_type
-              elem_type = tensor_type.elem_type
-             shape = [
-                d.dim_value if d.dim_value > 0 else None
-                for d in tensor_type.shape.dim
-                 ]
-vi = onnx.helper.make_value_info(name, elem_type, shape)
-            model.graph.output.append(vi)
-            added += 1
-
+            elem_type = tensor_type.elem_type
+            shape = []
+            for d in tensor_type.shape.dim:
+                if d.dim_value:
+                    shape.append(int(d.dim_value))
+                else:
+                    shape.append(1)
+                
+            for node in model.graph.node:
+               for name in node.output:
+                   vi= onnx.helper.make_tensor_value_info(
+                   name,
+                   onnx.TensorProto.FLOAT,
+                   None
+                   )
+                   model.graph.output.append(vi)
+                 
     print(f"  Added {added} intermediate outputs to graph.")
 
     onnx.save(model, DEBUG_ONNX_PATH)
