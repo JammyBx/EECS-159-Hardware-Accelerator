@@ -102,7 +102,13 @@ def build_debug_model():
         elif name in graph_input_map:
             # Graph input tensor — create a ValueInfoProto from the input
             inp = graph_input_map[name]
-            vi = onnx.helper.make_value_info(name, inp.type.tensor_type.elem_type, None)
+            tensor_type = inp.type.tensor_type
+              elem_type = tensor_type.elem_type
+             shape = [
+                d.dim_value if d.dim_value > 0 else None
+                for d in tensor_type.shape.dim
+                 ]
+vi = onnx.helper.make_value_info(name, elem_type, shape)
             model.graph.output.append(vi)
             added += 1
 
