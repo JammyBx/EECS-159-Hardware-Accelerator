@@ -1,0 +1,111 @@
+import serial
+import struct
+import sys
+import time
+import random
+
+CMD_REQ  = 0xA0
+CMD_RESP = 0xA1
+FPGA_HZ  = 100_000_000
+
+def open_port(port: str, baud: int = 9600) -> serial.Serial:
+    ser = serial.Serial(
+        port=port,
+        baudrate=baud,
+        bytesize=serial.EIGHTBITS,
+        parity=serial.PARITY_NONE,
+        stopbits=serial.STOPBITS_ONE,
+        timeout=2.0,
+        write_timeout=2.0,
+    )
+    time.sleep(0.2)
+    ser.reset_input_buffer()
+    ser.reset_output_buffer()
+    return ser
+
+def wrap16(x: int) -> int:
+    x &= 0xFFFF
+    return x - 0x10000 if (x & 0x8000) else x
+
+def matmul2x2_plus_c(A, B, C):
+    a00, a01, a10, a11 = A
+    b00, b01, b10, b11 = B
+    c00, c01, c10, c11 = C
+    r00 = a00*b00 + a01*b10 + c00
+    r01 = a00*b01 + a01*b11 + c01
+    r10 = a10*b00 + a11*b10 + c10
+    r11 = a10*b01 + a11*b11 + c11
+    return (wrap16(r00), wrap16(r01), wrap16(r10), wrap16(r11))
+
+def fmt2x2(M):
+    return f"[[{M[0]}, {M[1]}], [{M[2]}, {M[3]}]]"
+
+def send_request(ser: serial.Serial, A, B, C):
+    pkt = struct.pack("<B", CMD_REQ)
+    pkt += struct.pack("<12h",
+        A[0], A[1], A[2], A[3],
+        B[0], B[1], B[2], B[3],
+        C[0], C[1], C[2], C[3],
+    )
+    ser.write(pkt)
+    ser.flush()
+
+def read_response_resync(ser: serial.Serial):
+    # Find header 0xA1, then read remaining 12 bytes.
+    while True:
+        b = ser.read(1)
+        if not b:
+            raise RuntimeError("Timeout waiting for response header")
+        if b[0] == CMD_RESP:
+            rest = ser.read(12)
+            if len(rest) != 12:
+                raise RuntimeError(f"Short response after header, got {len(rest)} bytes")
+            r00, r01, r10, r11 = struct.unpack("<4h", rest[0:8])
+            fpga_cycles = struct.unpack("<I", rest[8:12])[0]
+            return (r00, r01, r10, r11), fpga_cycles
+
+def main():
+    if len(sys.argv) < 2:
+        print("Usage: python3 fpga_final.py /dev/ttyUSB0 [iters]")
+        sys.exit(1)
+
+    port = sys.argv[1]
+    iters = int(sys.argv[2]) if len(sys.argv) >= 3 else 20
+
+    ser = open_port(port, 9600)
+
+    try:
+        for k in range(iters):
+            A = tuple(random.randint(-200, 200) for _ in range(4))
+            B = tuple(random.randint(-200, 200) for _ in range(4))
+            b = random.randint(-200, 200)
+            C = (b, b, b, b)
+
+            t0 = time.perf_counter_ns()
+            py_R = matmul2x2_plus_c(A, B, C)
+            t1 = time.perf_counter_ns()
+            py_ns = t1 - t0
+
+            ser.reset_input_buffer()  # avoid stale bytes from prior runs
+            send_request(ser, A, B, C)
+            fpga_R, fpga_cycles = read_response_resync(ser)
+
+            fpga_ns = int(fpga_cycles * (1_000_000_000 / FPGA_HZ))
+            ok = (fpga_R == py_R)
+
+            print(f"Test {k}")
+            print(f"A = {fmt2x2(A)}")
+            print(f"B = {fmt2x2(B)}")
+            print(f"C = {fmt2x2(C)}  (b={b})")
+            print(f"PY   R = {fmt2x2(py_R)}   time = {py_ns} ns")
+            print(f"FPGA R = {fmt2x2(fpga_R)}   time = {fpga_cycles} cycles ({fpga_ns} ns)   ok={ok}")
+            print("")
+
+            if not ok:
+                break
+
+    finally:
+        ser.close()
+
+if __name__ == "__main__":
+    main()
